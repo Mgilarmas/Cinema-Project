@@ -14,7 +14,7 @@ class CinemaTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('cinema')->insert([
+        DB::table('cinemas')->insert([
             ['movie' => 'It', 'duration' => '2h15m', 'genre' => 'horror'],
             ['movie' => 'Cars', 'duration' => '1h57m', 'genre' => 'animation'],
         ]);

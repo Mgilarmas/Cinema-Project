@@ -35,17 +35,29 @@ class CinemaController extends Controller
         return view('cinemas.edit', compact('cinema'));
     }
 
-    public function update(CinemaUpdateRequest $request, Cinema $cinema)
+    public function update(Request $request, Cinema $cinema)
     {
-        $product->update($request->validated());
+         // Validar los datos de entrada
+        $request->validate([
+            'movie' => 'required|string|max:255',
+            'duration' => 'required|string|max:100',
+            'genre' => 'required|string|max:100',
+        ]);
 
-        return redirect()->route('cinemas.index')->with('success','Cinema updated successfully');
+        // Actualizar el cine con los datos validados
+        $cinema->update([
+            'movie' => $request->input('movie'),
+            'duration' => $request->input('duration'),
+            'genre' => $request->input('genre'),
+        ]);
+
+        return redirect()->route('cinemas.index');
     }
 
     public function destroy(Cinema $cinema)
     {
         $cinema->delete();
 
-        return redirect()->route('cinemas.index')->with('success','Product deleted successfully');
+        return redirect()->route('cinemas.index');
     }
 }

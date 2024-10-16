@@ -12,7 +12,12 @@
     <ul>
         @foreach ($cinemas as $cinema)
             <li>{{ $cinema->movie }} {{ $cinema->duration }} {{ $cinema->genre }}</li>
-            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            <a href="{{ route('cinemas.edit', $cinema->id) }}"><i class="fa-solid fa-pen-to-square">Edit</i></a>
+            <form method="POST" action="{{ route('cinemas.destroy', $cinema) }}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
         @endforeach
     </ul>
 </body>

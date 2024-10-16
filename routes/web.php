@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CinemaController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-use App\Http\Controllers\CinemaController;
 
 Route::resource('cinemas', CinemaController::class);

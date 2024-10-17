@@ -1,0 +1,42 @@
+body{
+    background-color: #2B2E4A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    height: 100vh;
+}
+
+#main{
+    width: 50%;
+    padding: 10em;
+    border-radius: 20px;
+    background-color: #E84545;
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    font-family: fantasy;
+    font-size: 200px;
+    background-image: url(../images/films.jpg);
+    background-position: center;
+    background-size: contain;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px black;
+    letter-spacing: 20px;
+    text-decoration: none;
+    transition: font-size 1s ease-in-out;
+}
+
+a:hover{
+    font-size: 300px;
+}
+
+.pattern{
+    width: 100%;
+    height: 10vh;
+    background-image: url(../images/black_white.jpg);
+}

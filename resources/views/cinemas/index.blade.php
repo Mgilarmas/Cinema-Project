@@ -18,11 +18,11 @@
                 <li>{{ $cinema->movie }}</li>
                 <li>{{ $cinema->duration }}</li>
                 <li>{{ $cinema->genre }}</li>
-                <a href="{{ route('cinemas.edit', $cinema->id) }}"><i class="fa-solid fa-pen-to-square">Edit</i></a>
+                <a href="{{ route('cinemas.edit', $cinema->id) }}" class="edit">Edit</a>
                 <form method="POST" action="{{ route('cinemas.destroy', $cinema) }}">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    <button type="submit" class="delete">Delete</button>
                 </form>
             </div>
         @endforeach
